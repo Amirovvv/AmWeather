@@ -7,11 +7,15 @@ def index(request):
     appid = '04df3bd974e178dfde66e1f7428c5a7b'
     url = 'https://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid=' + appid
 
+    d = City.objects.all()
+    d.delete()
+
     if(request.method == 'POST'):
         form = CityForm(request.POST)
         form.save()
 
     form = CityForm()
+
 
     cities = City.objects.all()
 

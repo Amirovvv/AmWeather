@@ -26,7 +26,9 @@ def index(request):
         city_info = {
             'city': city.name,
             'temp': res["main"]["temp"],
-            'icon': res["weather"][0]["icon"]
+            'icon': res["weather"][0]["icon"],
+            'speed': res["wind"]["speed"],
+            'humidity': res["main"]["humidity"],
         }
         all_cities.append(city_info)
 
